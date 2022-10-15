@@ -12,15 +12,14 @@ class site:
 
 
     def get_site(self, num):
-        try:
-            text = ""
-            if(num > len(sites)):
+        text = ""
+        if(num > len(sites)):
             raise ValueError("Invalid input")
 
-            content = rqs.get(self.sites[num], auth=(self.username[num], self.password[num]))
-            text += content.text
+        content = rqs.get(self.sites[num], auth=(self.username[num], self.password[num]))
+        text += content.text
 
-            return text
+        return text
 
 
 
